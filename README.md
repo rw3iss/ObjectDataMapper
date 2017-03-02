@@ -13,7 +13,7 @@ For example, when using the save() method, the schema is looked up from the pass
     ObjectDataMapper.save('sometype', object);
     ObjectDataMapper.find('sometype', properties);
     
-## Methods: ##
+## Methods ##
     save(type, object) - performs an insert or an update, returning a promise.
     find(type, properties) - performs a search with the given properties, returning a promise.
 
