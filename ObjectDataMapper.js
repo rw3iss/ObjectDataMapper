@@ -1,6 +1,6 @@
 import mysql from 'mysql';
 import dbSchema from './model_schema';
-import Container from '../system/Container';
+import DB from './db_mysql';
 
 // Does generic CRUD operations on arbitrary objects
 export class ObjectDataMapper {
@@ -48,7 +48,7 @@ export class ObjectDataMapper {
 		cl("Attempting to save object", type, object, query);
 		
 		return new Promise((resolve, reject) => {
-			Container.DB.query(query)
+			DB.query(query)
 				.then((r) => {
 					// set inserted id
 					cl("query result", r);
