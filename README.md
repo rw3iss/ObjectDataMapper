@@ -20,3 +20,6 @@ For example, when using the save() method, the schema is looked up from the pass
 ## What It Doesn't Do ##
 Any kind of sophisticated joins or other-than-basic functionality for simple one-dimensional CRUD operations, for now.
 I will probably incorporate joining based on preferences set in the schema (ie. lazy-loading vs. on-the-fly for model properties that are foreign references).
+
+## Dependencies ##
+mysql
