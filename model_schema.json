@@ -1,0 +1,41 @@
+{
+	"user": {
+      "table": "users",
+      "properties": {
+        "id": { "type": "int", "primaryKey": true, "autoIncrement": true },
+        "username": { "type": "string", "notNull": true },
+        "email": { "type": "string", "notNull": true },
+        "password": { "type": "string", "notNull": true },
+        "firstname": { "type": "string" },
+        "lastname": { "type": "string" },
+        "date_created": { "type": "datetime" },
+        "last_login": { "type": "datetime" },
+        "token": { "type": "string" }
+      }
+	},
+
+	"blob": {
+      "table": "blobs",
+      "properties": {
+        "id": { "type": "int", "unsigned": true, "length": 10, "primaryKey": true, "autoIncrement": true },
+        "owner_id": { "type": "int", "notNull": true, "foreignKey": {
+            "name": "blobs_user_id_fk",
+            "table": "users",
+            "rules": {
+              "onDelete": "CASCADE",
+              "onUpdate": "RESTRICT"
+            },
+            "mapping": "id"
+          }
+        },
+        "parent_id": { "type": "int", "unsigned": true, "length": 10 },
+        "title": { "type": "string" },
+        "content": { "type": "text" },
+        "slug": { "type": "string" },
+        "date_created": { "type": "datetime", "notNull": true },
+        "date_edited": { "type": "datetime", "notNull": true },
+        "children": { "type": "string" },
+        "is_public": { "type": "boolean", "notNull": true }
+      }
+  }
+}
