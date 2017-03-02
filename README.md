@@ -1,5 +1,5 @@
 # ObjectDataMapper
-This is a simple module which expects a defined object schema, and presents CRUD methods for any arbitrary object to a database (currently only supporting mysql).
+This is a simple module which expects a defined object schema, and presents CRUD methods for any arbitrary object to a database (currently only supporting mysql). It's designed to be as simple as possible so as to provide the most transparency between high level and low level operations.
 
 Note that the current schema definitions confirm to the schemas used in db-migrate library (can be changed if necessary):
 https://db-migrate.readthedocs.io/en/latest/API/SQL/
