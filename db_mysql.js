@@ -21,6 +21,10 @@ function Db() {
     return self;
   }
 
+  this.escape = function(input) {
+    return mysql.escape(input);
+  }
+  
   this.queryOne = function(sql, data) {
     return this.query(sql, data, true);
   }
