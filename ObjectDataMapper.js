@@ -1,4 +1,3 @@
-import mysql from 'mysql';
 import dbSchema from './model_schema';
 import DB from './db_mysql';
 
@@ -72,7 +71,7 @@ export class ObjectDataMapper {
 			propType == typeof prop;
 
 		if (propType == 'string' || propType == 'text') {
-			return mysql.escape(prop)
+			return DB.escape(prop)
 		}
 		
 		return prop;
