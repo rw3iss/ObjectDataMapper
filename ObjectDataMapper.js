@@ -19,10 +19,11 @@ export class ObjectDataMapper {
 
 		if (object.id) {
 			// assume an update
-			var valString = '';
+			var valString = '', delim = ' ';
 			for (var property in schema.properties) {
 				if (object.hasOwnProperty(property)) {
-					valString += ' ' + property + '=' + this.tryEscape(object[property]);
+					valString += delim + property + '=' + this.tryEscape(object[property]);
+					delim = ', ';
 				}
 			}
 
